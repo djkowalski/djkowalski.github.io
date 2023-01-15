@@ -43,9 +43,9 @@
 							<li><a href="about.html">About</a></li>
 							<li><a href="files/webcv.pdf">CV</a></li>
 							<li><a href="research.html">Research</a></li>
+							<li><a href="tutorials.html">Tutorials</a></li>
 							<li><a href="popsci.html">PopSci</a></li>
 							<li><a href="blog.html">Blog</a></li>
-							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</nav>
 
@@ -55,45 +55,89 @@
 							<h1>Research Interests</h1>
 							<span class="image main"><img src="images/banner_research.jpg" alt="" /></span>
 
-							<p>
+							<!--p>
 								Most data-driven discovery occurs through screening of chemical space, focusing on 
 								structure-property relationships and generation of libraries of structurally-related analogues. 
 								My research has focused instead on process space, linking properties to synthetic variables, 
 								independent of structure. Work in chemical space often relies heavily on simulation to broaden 
 								the searchable space, but simulation is necessarily limited, and practical exploration is still 
 								important in exploration focused on the discovery of novelty.
+							</p-->
+
+							<p>
+								<b>Exploring for Novelty</b> | Chemical discovery is often focused in chemical space - predicting whether a structure will
+								display a given property (based on intuition or simulation) and then trying to illuminate routes to this target. However, 
+								this strategy requires a certain amount of prior data to inform the prediction. I work to design new algorithm-directed 
+								strategies to screen process spaces to discover novel substances, without function being used to direct this search. 
+								Running experiments without knowing what the product may be introduces further challenges, including engineering 
+								serendipity into the exploration, quantifying novelty, and dealing with difficulties arising from attempting to characterise
+								impure systems.
+							</p>
+
+							<p>
+								<b>Search Space Design</b> | Some of the challenges of exploring for novelty can be met by intelligent search space design. 
+								The choice of which variables can be altered during the exploration, and by how much, is heavily informed by human intuition
+								and heuristics, and this is difficult to quantify and teach to a digital agent. I am trying to codify this into frameworks 
+								to enable digital chemists to design their exploration experiments effectively, devise digital strategies to design search 
+								spaces, and through clarity, allow the underlying assumptions to be challenged and further probed.
+							</p>
+
+							<!--p>
+								<b>Linking Chemical and Process Spaces</b> | 
+							</p-->
+
+							<p>
+								<b>Digital Characterisation and Metric Design</b> | In order to enable closed loop chemical discovery, it is necessary for 
+								automated systems to be able to access, transform, and quantify data recorded by typical spectroscopic techniques. 
+								I build pipelines to interpret these data sources, and metrics to allow search algorithms to make decisions based on the 
+								information contained within. Digital interpretation offers certain advantages over human operators in terms of dataset size
+								and pattern finding, which I have exploited this in the deconvolution of complex system spectra.
+							</p>
+							
+							<p>
+								<b>Risk Management</b> | Data science has a huge potential in the creation of new tools for chemical laboratories. My work 
+								in this area has centred on tools to take advantage of the wealth of safety data freely-available online, with the intention 
+								of improving risk quantification and management in chemical inventories. Aims include the rational segregation of highly 
+								hazardous substances, ensuring correct storage conditions for sensitive materials, and improving risk management for 
+								vulnerable parties (e.g. pregnant people). 
 							</p>
 
 							<hr>
 
-							<h2>Digital Strategies for Chemical Discovery</h2>
+							<!--h2>Digital Strategies for Chemical Discovery</h2>
 							<p>
-								<b>Search Space Design</b> | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent 
-								taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh 
-								porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. 
+								<b>Exploring for Novelty</b> | Chemical discovery is often focused in chemical space - predicting whether a structure will
+								display a given property (based on intuition or simulation) and then trying to illuminate routes to this target. However, 
+								this strategy requires a certain amount of prior data to inform the prediction. I work to design new algorithm-directed 
+								strategies to screen process spaces to discover novel substances, without function being used to direct this search. 
+								Running experiments without knowing what the product may be introduces further challenges, including engineering 
+								serendipity into the exploration, quantifying novelty, and dealing with difficulties arising from attempting to characterise
+								impure systems.
+								Interpretability
+								Linking Chemical and Process Space
+							</p><p>
+								<b>Search Space Design</b> | Some of the challenges of exploring for novelty can be met by intelligent search space design. 
+								The choice of which variables can be altered during the exploration, and by how much, is heavily informed by human intuition
+								and heuristics, and this is difficult to quantify and teach to a digital agent. I am trying to codify this into frameworks 
+								to enable digital chemists to design their exploration experiments effectively, devise digital strategies to design search 
+								spaces, and through clarity, allow the underlying assumptions to be challenged and further probed. 
 							</p>
-							<p>
-								<b>Exploring for Novelty</b> | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent 
-								taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh 
-								porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. 
-							</p>
-							<p>
-								<b>Engineered Serendipity</b> | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent 
-								taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh 
-								porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. 
-							</p>
+
+							Exploring for Novelty
+							Search Space Design / Engineering Serendipity
+							Linking Chemical and Process Spaces / Process Databases
+							New Metrics
+							Interpretability / Digitising Analytics / Deconvolution of Complex Spectra
+							Risk Management Tools
 
 							<h2>Automated Interpretation of Analytics</h2>
 							<p>
-								<b>Handling Spectral Data</b> | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent 
-								taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh 
-								porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. 
+								<b>Digitising Characterisation and Metrics</b> | In order to enable closed loop chemical discovery, it is necessary for 
+								automated systems to be able to access, transform, and quantify data recorded by typical spectroscopic techniques. 
+								I build pipelines to interpret these data sources, and metrics to allow search algorithms to make decisions based on the 
+								information contained within.
 							</p><p>
 								<b>Deconvolution of Complex Spectra</b> | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent 
-								taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh 
-								porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. 
-							</p><p>
-								<b>Design of New Metrics</b> | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent 
 								taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh 
 								porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. 
 							</p>
@@ -113,7 +157,7 @@
 								improving risk management for vulnerable parties (e.g. pregnant people). 
 							</p>
 
-							<hr>
+							<hr-->
 							
 						</div>
 
@@ -122,13 +166,13 @@
 							<ol>
 								<li>
 									<u>Kowalski</u>, MacGregor, Long, Bell, Cronin;
-									"<b><em>Automated Library Generation and Serendipity Quantification enables Diverse Discovery in Coordination Chemistry</b></em>",
-									J. Am. Chem. Soc., 2023, (Accepted)
+									"<b>Automated Library Generation and Serendipity Quantification enables Diverse Discovery in Coordination Chemistry</b>",
+									<em>J. Am. Chem. Soc.</em>, 2023, (Accepted)
 								</li>
 								<li>
 									Porwol, <u>Kowalski</u>, Henson, Long, Bell, Cronin;
-									"<b><em>An Autonomous Chemical Robot Discovers the Rules of Inorganic Coordination Chemistry without Prior Knowledge</b></em>",
-									Angew. Chem. Int. Ed., 2020, <b>59</b>(28), 11256-11261 
+									"<b>An Autonomous Chemical Robot Discovers the Rules of Inorganic Coordination Chemistry without Prior Knowledge</b>",
+									<em>Angew. Chem. Int. Ed.</em>, 2020, <b>59</b>(28), 11256-11261 
 									(DOI: <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202000329">10.1002/anie.202000329</a>)
 								</li>
 							</ol>
@@ -208,7 +252,7 @@
 							<ul class="icons">
 								<li>
 									<a 
-										href="mailto:d.kowalski.1@research.gla.ac.uk" 
+										href="mailto:daniel.kowalski@glasgow.ac.uk" 
 										class="icon solid style2 fa-envelope"
 									><span class="label">Email</span></a></li>
 								<li>
