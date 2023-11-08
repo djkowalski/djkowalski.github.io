@@ -1,4 +1,4 @@
-let myMap = L.map("map").setView([32.790,130.6773], 12);   // Kumamoto
+let myMap = L.map("map").setView([32.790,130.6773], 11);   // Kumamoto
 //let myMap = L.map("map").setView([38.737, 137.0000], 6);   // Japan
 
 /*
