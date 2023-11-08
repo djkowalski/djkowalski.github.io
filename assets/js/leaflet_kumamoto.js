@@ -1,11 +1,20 @@
-let myMap = L.map("map").setView([32.7882,130.6773], 12);   // Kumamoto
+let myMap = L.map("map").setView([32.790,130.6773], 12);   // Kumamoto
 //let myMap = L.map("map").setView([38.737, 137.0000], 6);   // Japan
 
+/*
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     // Attribution is obligatory as per copyright!
     maxZoom: 20
 }).addTo(myMap);
+*/
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    // Attribution is obligatory as per copyright!
+    maxZoom: 20
+}).addTo(myMap);
+
 
 
 // Marker code downloaded from: https://github.com/pointhi/leaflet-color-markers
@@ -27,11 +36,11 @@ var greyIcon = new L.Icon({
     shadowSize: [30.75, 30.75]
   });
 
-let mark_mtkinpu = L.marker([32.8138785, 130.6388716], {icon: greyIcon}).addTo(myMap);
-let mark_kumamotocastle = L.marker([32.8031538, 130.7046536], {icon: greyIcon}).addTo(myMap);
-let mark_unganzenji = L.marker([32.81956,130.62282], {icon: greyIcon}).addTo(myMap);
-let mark_mifunedino = L.marker([32.71397446004195, 130.80187082727846], {icon: greyIcon}).addTo(myMap);
-let mark_kumamotozoo = L.marker([32.77482287871508, 130.74770088309984], {icon: greyIcon}).addTo(myMap);
+let mark_mtkinpu = L.marker([32.8138785, 130.6388716], {icon: blueIcon}).addTo(myMap);
+let mark_kumamotocastle = L.marker([32.8031538, 130.7046536], {icon: blueIcon}).addTo(myMap);
+let mark_unganzenji = L.marker([32.81956,130.62282], {icon: blueIcon}).addTo(myMap);
+let mark_mifunedino = L.marker([32.71397446004195, 130.80187082727846], {icon: blueIcon}).addTo(myMap);
+let mark_kumamotozoo = L.marker([32.77482287871508, 130.74770088309984], {icon: blueIcon}).addTo(myMap);
 
 
 /*
@@ -57,6 +66,6 @@ let diablo = L.polygon([
 
 mark_mtkinpu.bindPopup("<b>Mt. Kinpu</b>");
 mark_kumamotocastle.bindPopup("<b>Kumamoto Castle</b>");
-mark_unganzenji.bindPopup("<b>Unganzenji Temple / Reigando Cave</b>");
+mark_unganzenji.bindPopup("<b>Unganzenji Temple <br> Reigando Cave</b>");
 mark_mifunedino.bindPopup("<b>Mifune Dinosaur Museum</b>");
 mark_kumamotozoo.bindPopup("<b>Kumamoto City Zoo</b>");
