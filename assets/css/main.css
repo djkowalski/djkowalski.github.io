@@ -3386,3 +3386,12 @@ input, select, textarea {
         color: #333;
 		margin-bottom: 2.25em;
 	}
+
+
+/* Centered Element */
+
+	.center {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
