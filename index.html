@@ -30,7 +30,7 @@
 					<ul>
 						<li><a href="#home" class="active">Home</a></li>
 						<li><a href="#research_interests">Research Interests</a></li>
-						<!--li><a href="#data_portfolio">Data Portfolio</a></li-->
+						<li><a href="#data_portfolio">Data Portfolio</a></li>
 						<li><a href="#publications">Technical Publications</a></li>
 						<!--li><a href="#wikipedia">Wikipedia Projects</a></li-->
 					</ul>
@@ -80,7 +80,7 @@
 									</p>
 										<div class="center">
 											<a href="#research_interests" class="button alt">Research Interests &nbsp; <i class="icon solid fa-vial"></i></a> &nbsp; &nbsp;
-											<!--a href="#data_portfolio" class="button alt">Data Portfolio &nbsp; <i class="icon solid fa-laptop-code"></i></a--> &nbsp; &nbsp;
+											<a href="#data_portfolio" class="button alt">Data Portfolio &nbsp; <i class="icon solid fa-laptop-code"></i></a> &nbsp; &nbsp;
 											<a href="https://www.linkedin.com/in/danieljkowalski" class="button alt">Get in Touch! &nbsp; <i class="icon brands fa-linkedin"></i></a>
 										</div>
 								</div>
@@ -98,12 +98,12 @@
 										<li class="icon solid fa-route">
 											<b>Digital Discovery Strategies</b>
 											<br>
-											Developing machine learning workflows for the exploration and exploitation of chemical search spaces, with a focus on fostering serendipity.
+											Developing machine learning methods for the exploration and exploitation of chemical search spaces, with a focus on fostering curiosity and serendipity.
 										</li>
 										<li class="icon solid fa-dice-d20">
 											<b>Earth-Abundant d-Block Chemistry</b>
 											<br>
-											Exploring the structures, reactivity, and properties of systems built around first row transition metals.
+											Exploring the structures, reactivity, and properties of systems containing first row transition metals.
 										</li>
 										<li class="icon solid fa-robot">
 											<b>Self-Driving Laboratories</b>
@@ -125,34 +125,39 @@
 							</section>
 
 						<!-- Data Portfolio -->
-							<!--section id="data_portfolio">
+							<section id="data_portfolio">
 								<div class="container">
 									<h3 style="color:#085E57;">Data Portfolio</h3>
 									<p>
-										This portfolio is intended to demonstrate my skills across a variety of data science and machine learning techniques. 
-										Each project is a toy problem, most drawn from chemistry. 
-										They are intended to be relevant to current research, but are limited by my personal resources. 
-										These projects are not intended to be taken as novel academic research.
-										Code is written in python3 and no AI-generated code has been included.
-										<br><br>
-										Links are provided to: (i) a brief non-technical explanation of each project, and (ii) the full GitHub repo for each project.
+										This portfolio is intended to demonstrate skills across a variety of data science and machine learning techniques using Python. 
+										Each project is a toy problem that uses methods that are actively being applied to chemical research.
+										However, as I only have access to a limited amount of computing power, the projects are meant to be simple and light-hearted.
+										The focus is on demonstrating proficiency in a given skill, rather than creating ground-breaking original research.
+										<!--
+											<br><br>
+											Links are provided to: (i) a brief non-technical explanation of each project, and (ii) the full GitHub repo for each project.
+										-->
 									</p>
 									<div class="features">
 										<article>
-											<a href="#" class="image"><img src="images/avatar.jpg" alt="" /></a>
+											<a href="https://github.com/djkowalski/portfolio_logP/blob/main/logP_RNN_v3_BO.ipynb" class="image"><img src="images/portfolio_1_cover.png" alt="Imaage showing the difference between true and predicted values for the test dataset" /></a>
 											<div class="inner">
 												<h4>1 | Optimising a Neural Network for Solubility Prediction</h4>
 												<p>
-													This project uses bayesian optimisation to tune the hyperparameters for a 
-													recurrent long short-term memory (LSTM) network. 
+													This project uses a dataset of calculated log(P) values for a variety of organic molecules to train a <b>long short-term memory recurrent neural network (LSTM RNN)</b>.
+													SMILES strings are tokenised, trimmed, and padded, before being used to train the model.
+													<b>Bayesian optimisation</b> is used to optimise the hyperparameters in order to achieve the best balance between the mean square error of the training and test datasets.
+													The model achieves reasonable accuracy, but tends toward larger errors when less common structural features are present (e.g. for hypervalent iodine compounds or some atypical phosphorous-containing species, such as deprotonated alkylphosphanes).
 												</p>
 												<ul class="actions">
-													<li><a href="portfolio_1_solubility.html" class="button alt">Read More</a></li>
-													<li><a href="#" class="button alt">GitHub <i class="icon brands fa-github"></i></a></li>
+													<!--li><a href="portfolio_1_solubility.html" class="button alt">Read More</a></li-->
+													<li><a href="https://github.com/djkowalski/portfolio_logP/blob/main/logP_RNN_v3_BO.ipynb" class="button">GitHub <i class="icon brands fa-github"></i></a></li> 
+													<li><a href="https://github.com/djkowalski/portfolio_logP/blob/main/images/output_well%20performing%20molecules.png" class="button alt">High performers <i class="icon solid fa-eye"></i></a></li>
+													<li><a href="https://github.com/djkowalski/portfolio_logP/blob/main/images/output_poorly%20performing%20molecules.png" class="button alt">Low performers <i class="icon solid fa-eye"></i></a></li>
 												</ul>
 											</div>
 										</article>
-										<article>
+										<!--article>
 											<a href="#" class="image"><img src="images/avatar.jpg" alt="" /></a>
 											<div class="inner">
 												<h4>2 | Building a Bot to play Viking Chess using Reinforcement Learning </h4>
@@ -165,24 +170,29 @@
 													<li><a href="#" class="button alt">GitHub <i class="icon brands fa-github"></i></a></li>
 												</ul>
 											</div>
-										</article>
+										</article-->
 										<article>
-											<a href="#" class="image"><img src="images/avatar.jpg" alt="" /></a>
+											<a href="https://github.com/djkowalski/portfolio_birbAI/blob/main/birbAI_2%20GAN_v1.ipynb" class="image"><img src="images/portfolio_2_cover.png" alt="Four AI-generated images of birds" /></a>
 											<div class="inner">
-												<h4>3 | Generating Bird Pictures using a Denoising Diffision Model</h4>
+												<h4>2 | Creating Bird Images using Generative AI</h4>
 												<p>
-													Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac 
-													faucibus integer adipiscing ornare amet.
+													This project uses a <b>Generative Adversarial Network (GAN)</b> to generate images of birds.
+													A dataset of over 9,000 bird images is first created by standardising the size and resolution and converting to greyscale.
+													This is then used to train two networks - an image generator and a real/fake image discriminator - in tandem. 
+													The generator takes noise as an input and attempts to trick the discriminator as the latter tries to determine whether images are from the original dataset (real) or generated (fake).
+													While the generator is unable to create images that are truly lifelike, it is able to produce images that are clearly <i>attempting</i> to mimic birds. 
+													This could potentially be further optimised with additional computing power, but is a solid proof of concept for my purposes.
 												</p>
 												<ul class="actions">
-													<li><a href="#" class="button alt">Read More</a></li>
-													<li><a href="#" class="button alt">GitHub <i class="icon brands fa-github"></i></a></li>
+													<!--li><a href="#" class="button alt">Read More</a></li-->
+													<li><a href="https://github.com/djkowalski/portfolio_birbAI/blob/main/birbAI_2%20GAN_v1.ipynb" class="button">GitHub <i class="icon brands fa-github"></i></a></li>
+													<li><a href="https://github.com/djkowalski/portfolio_birbAI/blob/main/gan-generated-images-false-color.png" class="button alt">Selected generated images <i class="icon solid fa-eye"></i></a></li>
 												</ul>
 											</div>
 										</article>
 									</div>
 								</div>
-							</section-->
+							</section>
 
 						<!-- Publications -->
 							<section id="publications">
