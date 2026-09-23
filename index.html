@@ -28,11 +28,10 @@
 				
 				<nav id="nav">
 					<ul>
-						<li><a href="#home" class="active">Home</a></li>
-						<li><a href="#research_interests">Research Interests</a></li>
-						<li><a href="#data_portfolio">Data Portfolio</a></li>
-						<li><a href="#publications">Technical Publications</a></li>
-						<!--li><a href="#wikipedia">Wikipedia Projects</a></li-->
+						<li><a href="index.html" class="active"><i class="icon solid fa-home"></i> &nbsp; Homepage</a></li>
+						<li><a href="research.html"><i class="icon solid fa-vial"></i> &nbsp; Research Interests</a></li>
+						<li><a href="portfolio.html"><i class="icon solid fa-laptop-code"></i> &nbsp; Data Portfolio</a></li>
+						<li><a href="#home"><i class="icon solid fa-angle-up"></i> &nbsp; Top</a></li>
 					</ul>
 				</nav>
 				<footer>
@@ -72,188 +71,21 @@
 										<b>
 											I am a PhD-qualified chemist with close to a decade of research and teaching experience and a strong interdisciplinary background.
 										</b>
+										<br><br>
 										My synthetic work has ranged across the breadth of chemistry, from an internship in the pharmaceutical industry to work on academic projects in classical and organometallic coordination chemistry, nanochemistry, and abiogenesis.
 										As a doctoral candidate, I focused on designing and validating digital tools to enhance chemical discovery, drawing from data science, machine learning, and robotics. 
 										<br><br>
 										Alongside this, I have extensive teaching experience across all ages from elementary/primary school to undergraduate. 
-										Notably, I have spent two and a half years as a teacher of English as a foreign language across multiple schools in Japan.
+										Notably, I have spent three years as a teacher of English as a foreign language across multiple schools in Japan.
 									</p>
 										<div class="center">
-											<a href="#research_interests" class="button alt">Research Interests &nbsp; <i class="icon solid fa-vial"></i></a> &nbsp; &nbsp;
-											<a href="#data_portfolio" class="button alt">Data Portfolio &nbsp; <i class="icon solid fa-laptop-code"></i></a> &nbsp; &nbsp;
+											<a href="research.html" class="button alt">Research Interests &nbsp; <i class="icon solid fa-vial"></i></a> &nbsp; &nbsp;
+											<a href="portfolio.html" class="button alt">Data Portfolio &nbsp; <i class="icon solid fa-laptop-code"></i></a> &nbsp; &nbsp;
 											<a href="https://www.linkedin.com/in/danieljkowalski" class="button alt">Get in Touch! &nbsp; <i class="icon brands fa-linkedin"></i></a>
 										</div>
 								</div>
 							</section>
 
-						<!-- Research Interests -->
-							<section id="research_interests">
-								<div class="container">
-									<h3 style="color:#085E57;">Research Interests</h3>
-									<p>
-										My research interests cover the intersection of chemistry with data science, machine learning, and robotics.
-										I seek to enable discovery by developing new methods, models, and ideas that expand how we search for and understand chemical systems.
-									</p>
-									<ul class="feature-icons">
-										<li class="icon solid fa-route">
-											<b>Digital Discovery Strategies</b>
-											<br>
-											Developing machine learning methods for the exploration and exploitation of chemical search spaces, with a focus on fostering curiosity and serendipity.
-										</li>
-										<li class="icon solid fa-dice-d20">
-											<b>Earth-Abundant d-Block Chemistry</b>
-											<br>
-											Exploring the structures, reactivity, and properties of systems containing first row transition metals.
-										</li>
-										<li class="icon solid fa-robot">
-											<b>Self-Driving Laboratories</b>
-											<br>
-											Assembling systems that integrate robotics and machine learning for closed-loop material discovery, and investigating the interactions between human and AI agents.
-										</li>
-										<li class="icon solid fa-vial">
-											<b>Deconvolution of Chemical Mixtures</b>
-											<br>
-											Applying machine learning to interpret analytical data and visualise meaningful relationships within mixtures with high compositional diversity.
-										</li>
-										<li class="icon solid fa-code">
-											<b>Digitisation of Chemical Synthesis</b>
-											<br>
-											Creating interpretable and generalisable representations of synthetic data for machine learning.
-										</li>
-									</ul>
-								</div>
-							</section>
-
-						<!-- Data Portfolio -->
-							<section id="data_portfolio">
-								<div class="container">
-									<h3 style="color:#085E57;">Data Portfolio</h3>
-									<p>
-										This portfolio is intended to demonstrate skills across a variety of data science and machine learning techniques using Python. 
-										Each project is a toy problem that uses methods that are actively being applied to chemical research.
-										However, as I only have access to a limited amount of computing power, the projects are meant to be simple and light-hearted.
-										The focus is on demonstrating proficiency in a given skill, rather than creating ground-breaking original research.
-										<!--
-											<br><br>
-											Links are provided to: (i) a brief non-technical explanation of each project, and (ii) the full GitHub repo for each project.
-										-->
-									</p>
-									<div class="features">
-										<article>
-											<a href="https://github.com/djkowalski/portfolio_logP/blob/main/logP_RNN_v3_BO.ipynb" class="image"><img src="images/portfolio_1_cover_solubility.png" alt="Imaage showing the difference between true and predicted values for the test dataset" /></a>
-											<div class="inner">
-												<h4>1 | Optimising a Neural Network for Solubility Prediction</h4>
-												<p>
-													This project uses a dataset of calculated log(P) values for a variety of organic molecules to train a <b>long short-term memory recurrent neural network (LSTM RNN)</b>.
-													SMILES strings are tokenised, trimmed, and padded, before being used to train the model.
-													<b>Bayesian optimisation</b> is used to optimise the hyperparameters in order to achieve the best balance between the mean square error of the training and test datasets.
-													The model achieves reasonable accuracy, but tends toward larger errors when less common structural features are present (e.g. for hypervalent iodine compounds or some atypical phosphorous-containing species, such as deprotonated alkylphosphanes).
-												</p>
-												<ul class="actions">
-													<!--li><a href="portfolio_1_solubility.html" class="button alt">Read More</a></li-->
-													<li><a href="https://github.com/djkowalski/portfolio_logP/blob/main/logP_RNN_v3_BO.ipynb" class="button">GitHub <i class="icon brands fa-github"></i></a></li> 
-													<li><a href="https://github.com/djkowalski/portfolio_logP/blob/main/images/output_well%20performing%20molecules.png" class="button alt"><i class="icon solid fa-eye"></i> High performers</a></li>
-													<li><a href="https://github.com/djkowalski/portfolio_logP/blob/main/images/output_poorly%20performing%20molecules.png" class="button alt"><i class="icon solid fa-eye"></i> Low performers</a></li>
-												</ul>
-											</div>
-										</article>
-										<!--article>
-											<a href="#" class="image"><img src="images/avatar.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>2 | Building a Bot to play Viking Chess using Reinforcement Learning </h4>
-												<p>
-													Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac 
-													faucibus integer adipiscing ornare amet.
-												</p>
-												<ul class="actions">
-													<li><a href="portfolio_3_game_of_life.html" class="button alt">Read More</a></li>
-													<li><a href="#" class="button alt">GitHub <i class="icon brands fa-github"></i></a></li>
-												</ul>
-											</div>
-										</article-->
-										<article>
-											<a href="https://github.com/djkowalski/portfolio_birbAI/blob/main/birbAI_2%20GAN_v1.ipynb" class="image"><img src="images/portfolio_2_cover_birbAI.png" alt="Four AI-generated images of birds" /></a>
-											<div class="inner">
-												<h4>2 | Creating Bird Images using Generative AI</h4>
-												<p>
-													This project uses a <b>Generative Adversarial Network (GAN)</b> to generate images of birds.
-													A dataset of over 9,000 bird images is first created by standardising the size and resolution and converting to greyscale.
-													This is then used to train two networks - an image generator and a real/fake image discriminator - in tandem. 
-													The generator takes noise as an input and attempts to trick the discriminator as the latter tries to determine whether images are from the original dataset (real) or generated (fake).
-													While the generator is unable to create images that are truly lifelike, it is able to produce images that are clearly <i>attempting</i> to mimic birds with around 300-400 training epochs. 
-													This could potentially be further optimised with additional computing power, but is a solid proof of concept for my purposes.
-												</p>
-												<ul class="actions">
-													<!--li><a href="#" class="button alt">Read More</a></li-->
-													<li><a href="https://github.com/djkowalski/portfolio_birbAI/blob/main/birbAI_2%20GAN_v1.ipynb" class="button">GitHub <i class="icon brands fa-github"></i></a></li>
-													<li><a href="https://github.com/djkowalski/portfolio_birbAI/blob/main/gan-generated-images-false-color.png" class="button alt"><i class="icon solid fa-eye"></i> Selected generated images</a></li>
-												</ul>
-											</div>
-										</article>
-										<article>
-											<a href="#data_portfolio" class="image"><img src="images/portfolio_3_cover_elmosays.png" alt="" /></a>
-											<div class="inner">
-												<h4>3 | Fine-Tuning an LLM to Speak like Elmo </h4>
-												<p>
-													This project fine-tuned a local version of the <b>TinyLlama LLM</b> on a database of speech from Elmo, the Sesame Street character. 
-													LLMs are commonly criticised for their stylised and slightly unnatural voice, fine-tuning can be used to alter this. 
-													<b>Parameter-efficient fine tuning</b> was used (where a small number of model parameters are tuned, rather than all parameters), to reduce the computational cost.
-													The tuned model (TinyElmo) was able to give responses mimicking Elmo’s idiosyncratic speech when prompted directly to speak in his voice, while an untuned model gave responses that were indecipherable from its usual voice with the same direct prompt. 
-												</p>
-												<!--ul class="actions">
-													<li><a href="#" class="button">GitHub <i class="icon brands fa-github"></i></a></li>
-												</ul-->
-											</div>
-										</article>
-									</div>
-								</div>
-							</section>
-
-						<!-- Publications -->
-							<section id="publications">
-								<div class="container">
-									<h3 style="color:#085E57;">Technical Publications</h3>
-									<p></p>
-									<div class="features">
-										<article>
-											<a href="https://doi.org/10.1021/jacs.2c11066" class="image">
-												<img src="images/paper_2023_jacs.png" alt="" />
-											</a>
-											<div class="inner">
-												<p>
-													<b>Automated Library Generation and Serendipity Quantification Enables Diverse Discovery in Coordination Chemistry</b>
-													<br>
-													<u>Kowalski</u>, MacGregor, Long, Bell, Cronin
-													<br>
-													<i>J. Am. Chem. Soc.</i> 2023, <b>145</b>(4), pp.2332
-												</p>
-												<ul class="actions">
-													<li><a href="https://doi.org/10.1021/jacs.2c11066" class="button alt"><i class="icon solid fa-link"></i> Journal</a></li>
-													<li><a href="https://github.com/croningp/DigitalCoordinationChemistry" class="button alt">GitHub <i class="icon brands fa-github"></i></a></li>
-												</ul>
-											</div>
-										</article>
-										<article>
-											<a href="https://doi.org/10.1002/anie.202000329" class="image">
-												<img src="images/paper_2020_acie.jpg" alt="" />
-											</a>
-											<div class="inner">
-												<p>
-													<b>An Autonomous Chemical Robot Discovers the Rules of Inorganic Coordination Chemistry without Prior Knowledge</b>
-													<br>
-													Porwol, <u>Kowalski</u>, Henson, Long, Bell, Cronin
-													<br>
-													<i>Angew. Chem. Int. Ed.</i> 2020, <b>59</b>(28), pp.11256
-												</p>
-												<ul class="actions">
-													<li><a href="https://doi.org/10.1002/anie.202000329" class="button alt"><i class="icon solid fa-link"></i> Journal</a></li>
-													<!--li><a href="https://github.com/croningp/InorganicFinder" class="button alt">GitHub <i class="icon brands fa-github"></i></a></li-->
-												</ul>
-											</div>
-										</article>
-									</div>
-								</div>
-							</section>							
 
 						<!-- Wikipedia -->
 							<!--section id="wikipedia">

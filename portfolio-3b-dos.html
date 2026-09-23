@@ -1,0 +1,294 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>DK | Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="icon" type="image/x-icon" href="images/erlenmeyer-16x16.png">
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<span class="image avatar"><img src="images/1723819068352.jpg" alt="" /></span>
+					<h1 id="logo"><a href="#">Daniel J. Kowalski</a></h1>
+					<p>
+						PhD in Digital Chemistry 
+						<br>
+						Chemistry | Data Science | Education 
+					</p>
+				</header>
+				
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html"><i class="icon solid fa-home"></i> &nbsp; Homepage</a></li>
+						<li><a href="research.html"><i class="icon solid fa-vial"></i> &nbsp; Research Interests</a></li>
+						<li><a href="portfolio.html"><i class="icon solid fa-laptop-code"></i> &nbsp; Data Portfolio</a></li>
+						<li><a href="#project-content"><i class="icon solid fa-angle-up"></i> &nbsp; Top</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+						<!--<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>-->
+						<li><a href="https://www.linkedin.com/in/danieljkowalski" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://scholar.google.com/citations?user=6dFv_4gAAAAJ&hl=en&oi=ao" class="icon brands fa-google"><span class="label">Google Scholar</span></a></li>
+						<li><a href="https://github.com/djkowalski" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					</ul>
+				</footer>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Home -->
+							<section id="project-content">
+								<div class="image main" data-position="center">
+									<img src="images/banner_rutile_dos.png" alt="Vibrant collision of red and blue ink drops" />
+								</div>
+								<div class="container" >
+									<p style="color:#085E57; font-weight:bold; font-size:1.2em; margin-bottom:0.5em;">
+										Data Portfolio | Chemical Simulation
+									</p>
+									<h3>3b | Band Structure and Density of States</h3>
+
+									<div class="callout-green">
+										<b style="color:#085E57;">Overview</b>
+										<p style="margin-bottom: 1%;">
+											This project aims to calculate the band structure and density of states for periodic inorganic crystals in Quantum ESPRESSO, covering a variety of major structure types. 
+											The process is shown in detail for rutile (tetragonal TiO<sub>2</sub>), with further examples following the same workflow included.
+											The workflow described involves running non-self-consistent field calculations along defined paths through the crystal or over a uniform k-grid to afford the band structure or density of states. 
+										</p>
+									</div>
+
+									<div class="center" style="margin-bottom: 4%;">
+										<a href="" class="button">GitHub &nbsp; <i class="icon brands fa-github"></i></a>
+									</div>
+
+									<div style="margin-bottom:5%;">
+										<h4 style="color:#085E57;"> Step 1 | Defining the k-Path</h4>
+										<p style="margin-bottom: 1%;">
+											For the band structure calculation, a particular path through the crystal structure must be defined along which energies may be calculated.
+											I drew from the Materials Project to determine these paths (e.g. <a href="https://legacy.materialsproject.org/materials/mp-2657/">the Materials Project entry for rutile</a>).
+											This then allowed comparison between my results and those calculations.
+										</p><p>
+											The coordinates corresponding to the desired k-path were determined by first running a self-consistent field (SCF) calculation (using the optimised unit cell parameters from <a href="portfolio-3a-geometry-optimisation.html">this project</a>) and using xcrysden's 'k-path Selection' tool.
+											This tool displays the Brillouin lattice for the structure with the high-symmetry points shown.
+											These can be selected in order by the user and exported as a '.kpf' text file and used to construct the pw.x executable 'bands' calculation.
+										</p>
+										<img style="display:block; margin-left:auto; margin-right:auto; width:50%; margin-bottom:5%;" src="images/rutile_kpath.png" alt="" />
+										<p>
+											The image shows a user-selected partial k-path used in the calculation for rutile (gamma, X, M, gamma, Z, R, ...) 
+										</p>
+									</div>
+
+									<div style="margin-bottom:5%;">
+										<h4 style="color:#085E57;"> Step 2 | Band Structure Calculation </h4>
+										<p>
+											The structure of the pw.x 'bands' input file is very similar to the SCF input file, with the k-Path used in place of a uniform grid.
+											This file shows only the high-symmetry points and specifies a number of sampling points to automatically generate between those points (here 10.0).
+											Under &SYSTEM, the 'nbnd' parameter is also added. 
+											This must be sufficiently high to include all occupied bands and some unoccupied bands to afford the structures of the valance and conduction bands.
+										</p>
+										<div style="font-family:'Courier New',Courier,monospace; font-weight:bold">
+											pw.x Bands Calculation Input File | Rutile
+										</div>
+										<div class="codeblock" style="font-size:11pt; line-height:1.2em;">
+											&CONTROL																<br>
+											&nbsp; calculation = 'bands',											<br>
+											&nbsp; prefix = 'rutile',												<br>
+											&nbsp; outdir = './tmp/'												<br>
+											&nbsp; pseudo_dir = './pseudos/'										<br>
+											&nbsp; !verbosity = 'high'												<br>
+											/																		<br>
+											&SYSTEM																	<br>
+											&nbsp; ibrav = 6														<br>
+											&nbsp; celldm(1) = 8.7737677793     &nbsp; &nbsp;  ! a in bohr			<br>
+											&nbsp; celldm(3) = 0.6383275150     &nbsp; &nbsp;  ! c/a				<br>
+											&nbsp; nat =  6, 														<br>
+											&nbsp; ntyp = 2,														<br>
+											&nbsp; ecutwfc = 50														<br>
+											&nbsp; ecutrho = 200													<br>
+											&nbsp; nbnd = 35														<br>
+											/																		<br>
+											&ELECTRONS																<br>
+											&nbsp; mixing_beta = 0.6												<br>
+											/																		<br>
+																													<br>
+											ATOMIC_SPECIES															<br>
+											&nbsp; Ti  47.867  Ti_pbe_v1.4.uspp.F.upf								<br>
+											&nbsp; O   15.999  O.pbe-n-kjpaw_psl.0.1.upf							<br>
+																													<br>		
+											ATOMIC_POSITIONS (crystal)																							<br>
+											&nbsp; Ti   &nbsp;&nbsp;   0.0000000000    &nbsp; &nbsp;     0.0000000000    &nbsp; &nbsp;     0.0000000000				<br>
+											&nbsp; Ti   &nbsp;&nbsp;   0.5000000000    &nbsp; &nbsp;     0.5000000000    &nbsp; &nbsp;     0.5000000000				<br>
+											&nbsp; O    &nbsp; &nbsp;   0.3051058645    &nbsp; &nbsp;     0.3051058645   &nbsp;&nbsp;    -0.0000000000						<br>
+											&nbsp; O    &nbsp; &nbsp;   0.1948941355    &nbsp; &nbsp;     0.8051058645   &nbsp; &nbsp;     0.5000000000						<br>
+											&nbsp; O    &nbsp;&nbsp;  -0.3051058645    &nbsp;&nbsp;    -0.3051058645    &nbsp;&nbsp;   -0.0000000000								<br>
+											&nbsp; O    &nbsp; &nbsp;   0.8051058645    &nbsp; &nbsp;     0.1948941355    &nbsp; &nbsp;     0.5000000000		<br>
+																																													<br>
+											K_POINTS (tpiba_b)																														<br>
+											&nbsp; 12																																<br>
+											&nbsp; &nbsp; 0.0000000000  &nbsp; &nbsp;    0.0000000000   &nbsp; &nbsp;   0.0000000000   &nbsp; &nbsp;   10.0  &nbsp;  !GAMMA			<br>
+											&nbsp; &nbsp; 0.0000000000  &nbsp; &nbsp;    0.5000000000   &nbsp; &nbsp;   0.0000000000   &nbsp; &nbsp;   10.0  &nbsp;  !X				<br>
+											&nbsp;&nbsp; -0.5000000000  &nbsp; &nbsp;    0.5000000000  &nbsp; &nbsp;    0.0000000000  &nbsp; &nbsp;    10.0  &nbsp;  !M					<br>
+											&nbsp; &nbsp; 0.0000000000  &nbsp; &nbsp;    0.0000000000   &nbsp; &nbsp;   0.0000000000   &nbsp; &nbsp;   10.0  &nbsp;  !GAMMA			<br>
+											&nbsp; &nbsp; 0.0000000000  &nbsp; &nbsp;    0.0000000000   &nbsp; &nbsp;   0.5000000000   &nbsp; &nbsp;   10.0  &nbsp;  !Z				<br>
+											&nbsp; &nbsp; 0.0000000000  &nbsp; &nbsp;    0.5000000000   &nbsp; &nbsp;   0.5000000000   &nbsp; &nbsp;   10.0  &nbsp;  !R				<br>
+											&nbsp; &nbsp; 0.5000000000  &nbsp; &nbsp;    0.5000000000   &nbsp; &nbsp;   0.5000000000   &nbsp; &nbsp;   10.0  &nbsp;  !A				<br>
+											&nbsp; &nbsp; 0.0000000000  &nbsp; &nbsp;    0.0000000000   &nbsp; &nbsp;   0.5000000000   &nbsp; &nbsp;   10.0  &nbsp;  !Z				<br>
+											&nbsp; &nbsp; 0.0000000000  &nbsp;&nbsp;   -0.5000000000  &nbsp; &nbsp;    0.0000000000   &nbsp; &nbsp;   10.0  &nbsp;  !X					<br>
+											&nbsp; &nbsp; 0.0000000000  &nbsp;&nbsp;   -0.5000000000  &nbsp; &nbsp;    0.5000000000   &nbsp; &nbsp;   10.0  &nbsp;  !R					<br>
+											&nbsp; &nbsp; 0.5000000000  &nbsp;&nbsp;   -0.5000000000  &nbsp; &nbsp;    0.0000000000   &nbsp; &nbsp;   10.0  &nbsp;  !M					<br>
+											&nbsp; &nbsp; 0.5000000000  &nbsp;&nbsp;   -0.5000000000  &nbsp; &nbsp;    0.5000000000   &nbsp; &nbsp;&nbsp;    0.0  &nbsp;  !A					<br>
+										</div>
+										<div class="terminalblock" style="font-size:11pt; line-height:1.2em;">
+											(env) <b style="color:#10bbad">qe</b>:<b style="color:aquamarine;">~/folder/path</b>$ pw.x &lt;rutile.scf.in&gt; rutile.scf.out <br>
+											(env) <b style="color:#10bbad">qe</b>:<b style="color:aquamarine;">~/folder/path</b>$ xcrysden --pwo rutile.scf.out <br><br>
+											<i>User selects k-path and exports the coordinates as a '.kpf' file to construct the pw.x 'bands' input file</i> <br><br>
+											(env) <b style="color:#10bbad">qe</b>:<b style="color:aquamarine;">~/folder/path</b>$ pw.x &lt;rutile_kpath.bands.in&gt; rutile_kpath.bands.out
+										</div>
+										<p>
+											The wavefunctions calculated through this workflow were then converted to an easily visualised format using the bands.x executable.
+											This data can then be plotted (as shown in the 'Results' section below).
+										</p>
+										<div style="font-family:'Courier New',Courier,monospace; font-weight:bold">
+											bands.x Bands Post-Processing Input File | Rutile
+										</div>
+										<div class="codeblock" style="font-size:11pt; line-height:1.2em;">
+											&BANDS									<br>
+											&nbsp; prefix  = 'rutile'				<br>
+											&nbsp; filband = 'rutile_bands.dat'		<br>
+											&nbsp; outdir = './tmp/'				<br>
+											/										
+										</div>
+										<div class="terminalblock" style="font-size:11pt; line-height:1.2em;">
+											(env) <b style="color:#10bbad">qe</b>:<b style="color:aquamarine;">~/folder/path</b>$ bands.x &lt;rutile.bands.in&gt; rutile.bands.out
+										</div>
+									</div>
+
+									<div style="margin-bottom:5%;">
+										<h4 style="color:#085E57;"> Step 3 | Density of States (DOS) Calculation </h4>
+										<p>
+											The DOS calculation follows a similar workflow to the band structure.
+											Intially, an SCF calculation is used to solve the ground state of the crystal.
+											This is followed by a non-self-consistent field (NSCF) calculation with a denser k-point grid to determine allowed energy levels across the material.
+											Note that the k-point grid is doubled from that used in the SCF calculation for this work.
+											The 'bands' calculation above is equivalent to an NSCF calculation constrained to points along the k=path.
+											The dos.x executable is then used to tally up the energy levels from the NSCF calculation and calculate the number of states existing at each energy.
+										</p>
+										<div style="font-family:'Courier New',Courier,monospace; font-weight:bold">
+											NSCF Calculation Input File | Rutile
+										</div>
+										<div class="codeblock" style="font-size:11pt; line-height:1.2em;">
+											&CONTROL							<br>
+											&nbsp; calculation = 'nscf',		<br>
+											&nbsp; prefix = 'rutile',			<br>
+											&nbsp; outdir = './tmp/'			<br>
+											&nbsp; pseudo_dir = './pseudos/'	<br>
+											/									<br>
+											&SYSTEM								<br>
+											&nbsp; ...							<br>
+											&nbsp; nbnd = 35					<br>
+											/									<br>
+											&ELECTRONS							<br>
+											&nbsp; ...							<br>
+											/									<br>
+																				<br>
+											ATOMIC_SPECIES						<br>
+											&nbsp; ...							<br>
+																				<br>
+											ATOMIC_POSITIONS (crystal)			<br>
+											&nbsp; ...							<br>
+																				<br>
+											K_POINTS (automatic)				<br>
+											&nbsp; 8 8 12 0 0 0					<br>
+										</div>
+										<div style="font-family:'Courier New',Courier,monospace; font-weight:bold">
+											DOS Calculation Input File | Rutile
+										</div>
+										<div class="codeblock" style="font-size:11pt; line-height:1.2em;">
+											&DOS								<br>
+											&nbsp; prefix  = 'rutile'			<br>
+											&nbsp; Emin = 3.00, Emax = 18.00	<br>
+											&nbsp; DeltaE = 0.07          		<br>
+											&nbsp; ngauss = 0					<br>
+											&nbsp; fildos = 'rutile_dos.dat'	<br>
+											&nbsp; outdir = './tmp/'			<br>
+											/									<br>
+										</div>
+										<div class="terminalblock" style="font-size:11pt; line-height:1.2em;">
+											(env) <b style="color:#10bbad">qe</b>:<b style="color:aquamarine;">~/folder/path</b>$ pw.x &lt;rutile.scf.in&gt; rutile.scf.out <br>
+											(env) <b style="color:#10bbad">qe</b>:<b style="color:aquamarine;">~/folder/path</b>$ pw.x &lt;rutile.nscf.in&gt; rutile.nscf.out <br>
+											(env) <b style="color:#10bbad">qe</b>:<b style="color:aquamarine;">~/folder/path</b>$ dos.x &lt;rutile.dos.in&gt; rutile.dos.out
+										</div>
+									</div>
+
+
+									<div style="margin-bottom:5%;">
+										<h4 style="color:#085E57;"> Results | Rutile Band Structure and DOS </h4>
+										<p style="margin-bottom:1%; font-style:italic;">Band Structure from this Calculation</p>
+										<img style="display:block; margin-left:auto; margin-right:auto; width:80%; margin-bottom:5%;" src="images/rutile_bandstructure.png" alt="" />
+										<p style="margin-bottom:1%; font-style:italic;">Band Structure from the Materials Project</p>
+										<img style="display:block; margin-left:auto; margin-right:auto; width:90%; margin-bottom:5%;" src="images/rutile_mp_bandstructure.png" alt="" />
+										<p style="margin-bottom:1%;">
+											The band gap given from my calculation is 1.8565 eV. 
+											This is far below the experimentally measured value of ~3.0 eV, however, DFT-calculated values using PBE functionals are known to systematically underestimate band gaps so this is not a cause for concern.
+											The <a href="https://legacy.materialsproject.org/materials/mp-2657/">Materials Project</a> value is 1.772 eV and other studies report calculated values without corrections similar to mine (such as 1.86 eV from <a href="https://doi.org/10.1103/PhysRevB.86.075209">Lee <i>et al.</i></a> and 1.85 eV from <a href="https://doi.org/10.1088/1674-1056/26/8/087101">Li <i>et al.</i></a>)
+										</p><p>
+											The band structures from my calculation and the Materials Project seem to be in some agreement - the coarse struture of the bands is similar, but the fine structure shows some differences.
+											I believe this is most likely due to the different pseudopotentials used for the two calculations. 
+											Materials Project band structure calculations are peformed using VASP pseudopotentials, which I cannot access.
+											To try and compare like-for-like, I ran the same calculation detailed above using the unit cell parameters from the Materials Project entry for rutile.
+											The results for density of states are shown in as the thinner red trace in the top figure. 
+											There is a slight shift from the values with my optimised cell, but the coarse and fine structures are the same.
+										</p>
+									</div>
+
+
+									<!--div style="margin-bottom:5%;">
+										<h4 style="color:#085E57;"> References </h4>
+										<ul> 
+											<li>Text Text Text Text Text Text Text Text Text Text Text Text
+											<li>XSS
+										</ul>
+									</div-->
+
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<ul class="copyright">
+								<li>&copy; Daniel J. Kowalski. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

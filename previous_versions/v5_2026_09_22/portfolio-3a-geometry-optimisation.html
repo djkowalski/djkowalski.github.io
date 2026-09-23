@@ -1,0 +1,434 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>DK | Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="icon" type="image/x-icon" href="images/erlenmeyer-16x16.png">
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<span class="image avatar"><img src="images/1723819068352.jpg" alt="" /></span>
+					<h1 id="logo"><a href="#">Daniel J. Kowalski</a></h1>
+					<p>
+						PhD in Digital Chemistry 
+						<br>
+						Chemistry | Data Science | Education 
+					</p>
+				</header>
+				
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html"><i class="icon solid fa-home"></i> &nbsp; Homepage</a></li>
+						<li><a href="research.html"><i class="icon solid fa-vial"></i> &nbsp; Research Interests</a></li>
+						<li><a href="portfolio.html"><i class="icon solid fa-laptop-code"></i> &nbsp; Data Portfolio</a></li>
+						<li><a href="#project-content"><i class="icon solid fa-angle-up"></i> &nbsp; Top</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+						<!--<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>-->
+						<li><a href="https://www.linkedin.com/in/danieljkowalski" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://scholar.google.com/citations?user=6dFv_4gAAAAJ&hl=en&oi=ao" class="icon brands fa-google"><span class="label">Google Scholar</span></a></li>
+						<li><a href="https://github.com/djkowalski" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					</ul>
+				</footer>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Home -->
+							<section id="project-content">
+								<div class="image main" data-position="center">
+									<img src="images/banner_crystals.png" alt="Vibrant collision of red and blue ink drops" />
+								</div>
+								<div class="container" >
+									<p style="color:#085E57; font-weight:bold; font-size:1.2em; margin-bottom:0.5em;">
+										Data Portfolio | Chemical Simulation
+									</p>
+									<h3>3a | Geometry Optimisation for Periodic Crystals</h3>
+
+									<div class="callout-green">
+										<b style="color:#085E57;">Overview</b>
+										<p style="margin-bottom: 2%;">
+										This project aims to optimise the structures of a variety of periodic inorganic crystals in Quantum ESPRESSO, covering a variety of major structure types. 
+										The process is shown in detail for rutile (tetragonal TiO<sub>2</sub>), with further examples following the same workflow included.
+										The structure and choice of parameters for the self-consistent field calculation input file is discussed. 
+										Where necessary, these parameters are then optimised and a variable cell relaxation calculation performed to provide the optimised cell coordinates. 
+										</p>
+										<img style="display: block; margin-left: auto; margin-right: auto; width: 30%; margin-bottom: 1%;" src="images/rutile_vcrelax1_white.png" alt="" />
+									</div>
+
+									<div class="center" style="margin-bottom: 4%;">
+										<a href="" class="button">GitHub &nbsp; <i class="icon brands fa-github"></i></a>
+									</div>
+
+									<div style="margin-bottom:5%;">
+										<h4 style="color:#085E57;"> Step 1 | Setup for Self-Consistent Field (SCF) Calculation</h4>
+										<p style="margin-bottom: 1%;">
+											This section outlines the structure of an input file for Quantum ESPRESSO's plane wave executable (pw.x). 
+											Once written, several parameter values can then be optimised to ensure an appropriate level of accuracy in the simulation (see Section 2).
+										</p><!--p style="margin-bottom: 1%;">
+											For a perfect crystal, as the arrangement of electrons is periodic, the 
+										</p>
+											<div class="codeblock" style="font-size:11pt; line-height:1.2em;;">
+												Software: <br>
+												&nbsp; Quantum ESPRESSO: 
+												&nbsp; Compiler:
+												&nbsp; MPI:
+												&nbsp; BLAS/LAPACK: 
+												<br> <br>
+												Hardware: <br>
+												&nbsp; CPU:
+												&nbsp; GPU: 
+												&nbsp; MPI ranks:
+											</div-->
+										<p style="margin-bottom: 1%;">
+											<b>Documentation</b> for the pw.x executable is available from the <a href="https://quantum-espresso.org/Doc/INPUT_PW.html">Quantum ESPRESSO website</a>.
+										</p><p style="margin-bottom: 1%;">
+											<b>Cell parameters</b> were sourced from experimental crystal structures where possible with the Materials Project as a fallback.
+											For rutile, the experimental structure was sourced from the Inorganic Crystal Structure Database (ICSD 142924, Deposition #: 2187406), originally recorded in <a href="https://doi.org/10.1002/ejic.202000555">Poschmann <i>et al.</i> (DOI: 10.1002/ejic.202000555</a>)
+											The CIF file was interpreted using the Gemmi, pymatgen, and Atomic Simulation Environment (ASE) packages for Python, with the cell dimensions and atomic positions used directly for the SCF calculation.
+										</p><p style="margin-bottom: 1%;">
+											<b>Pseudopotentials</b> were taken from the GBRV high-throughput pseudopotentials set produced by the Vanderbilt lab.
+											The relevant reference is <a href="https:/doi.org/10.1016/j.commatsci.2013.08.053"><i>Comput. Mater. Sci.</i>, 2014, <b>81</b>, pp.446</a>  (PPs available from: <a href="https://www.physics.rutgers.edu/gbrv/">https://www.physics.rutgers.edu/gbrv/</a>).
+										</p><p style="margin-bottom: 1%;">
+											<b>The K point grid</b> was chosen to provide a reasonably dense sampling, as this was possible for rutile's small unit cell without being too computationally expensive. 
+											As the unit cell is tetragonal, and the c-axis is shorter than the a- and b-axes, a finer sampling was used to maintain comparable sampling density in the reciprocal lattice. 
+										</p><p style="margin-bottom: 1%;"></p>
+											<b>Other parameter values</b> were largely those suggested in the pw.x documentation.
+											These include the starting values for kinetic energy cutoffs for wavefunctions ('ecutwfc') and for charge density and potential ('ecutrho'), which were then optimised in the next step.
+										</p>
+											<div style="font-family:'Courier New',Courier,monospace; font-weight:bold">
+												SCF Calculation Input File | Rutile
+											</div>
+											<div class="codeblock" style="font-size:11pt; line-height:1.2em;">
+												&CONTROL																									<br>
+												&nbsp; calculation = 'scf',																					<br>
+												&nbsp; prefix = 'rutile',																					<br>
+												&nbsp; outdir = './tmp/'																					<br>
+												&nbsp; pseudo_dir = './pseudos/'																			<br>
+												/																											<br>
+												&SYSTEM																										<br>
+												&nbsp; ibrav = 6		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  ! tetragonal unit cell	<br>
+												&nbsp; celldm(1) = 8.670   &nbsp;  ! a in bohr, 4.59 angstroms												<br>
+												&nbsp; celldm(3) = 0.645   &nbsp;  ! ratio c/a																<br>
+												&nbsp; nat =  6, 																							<br>
+												&nbsp; ntyp = 2,																							<br>
+												&nbsp; ecutwfc = 20																							<br>
+												&nbsp; ecutrho = 80        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;! ecutwfc*4							<br>
+												/																											<br>
+												&ELECTRONS																									<br>
+												&nbsp; mixing_beta = 0.6																					<br>
+												/																											<br>
+																																							<br>
+												ATOMIC_SPECIES																								<br>
+												&nbsp; Ti &nbsp; 47.867 &nbsp;&nbsp; Ti_pbe_v1.4.uspp.F.upf													<br>
+												&nbsp; O  &nbsp;&nbsp; 15.999 &nbsp;&nbsp; O.pbe-n-kjpaw_psl.0.1.upf										<br>
+																																							<br>
+												ATOMIC_POSITIONS (crystal)																					<br>
+												&nbsp; Ti &nbsp; 0.00000 &nbsp;&nbsp; 0.00000 &nbsp;&nbsp; 0.00000											<br>
+												&nbsp; Ti &nbsp; 0.50000 &nbsp;&nbsp; 0.50000 &nbsp;&nbsp; 0.50000											<br>
+												&nbsp; O  &nbsp;&nbsp; 0.30479 &nbsp;&nbsp; 0.30479 &nbsp;&nbsp; 0.00000									<br>
+												&nbsp; O  &nbsp;&nbsp; 0.19521 &nbsp;&nbsp; 0.80479 &nbsp;&nbsp; 0.50000									<br>
+												&nbsp; O  &nbsp; -0.30479 &nbsp; -0.30479 &nbsp;&nbsp; 0.00000												<br>
+												&nbsp; O  &nbsp;&nbsp; 0.80479 &nbsp;&nbsp; 0.19521 &nbsp;&nbsp; 0.50000									<br>
+																																							<br>
+												K_POINTS (automatic)																						<br>
+												&nbsp; 6 6 9 0 0 0																							<br>
+											</div>
+											<div class="terminalblock" style="font-size:11pt; line-height:1.2em;">
+												(env) <b style="color:#10bbad">qe</b>:<b style="color:aquamarine;">~/folder/path</b>$ pw.x &lt;rutile.scf.in&gt; rutile.scf.out
+											</div>
+									</div>
+
+									<div style="margin-bottom:5%;">
+										<h4 style="color:#085E57;"> Step 2 | Optimising Key Parameters: ecutwfc, ecutrho, degauss, K points</h4>
+										<p>
+											In order to optimise the calculation, a series of Linux shell scripts were used to vary the parameter of interest with a 'for do' loop.
+											Once all calculations for a given parameter were run, the total energies were compared. 
+											Convergence was assumed once the variation from one value to the next fell below 0.005 Ry (with any remaining variation assumed to be due to temperature). 
+											Initially, the 'ecutwfc' value was optimised, then 'ecutrho', and finally the K points grid. 
+											For metallic systems, the 'degauss' parameter was also optimised simultanteously with the K points grid.
+										</p>
+
+											<div style="font-family:'Courier New',Courier,monospace; font-weight:bold">
+													Example Linux Shell Script | Optimisation of Rutile K Points Grid
+											</div>
+											<div class="codeblock" style="font-size:11pt; line-height:1.2em;">
+												for NK in 1 2 3 4 5 6 7																	<br>
+												do																						<br>
+												NK_C=$(awk -v nk="$NK" 'BEGIN {printf "%.0f\n", nk * 1.54}')							<br>
+												# 1.54 is used as approx reciprocal of ratio c/a										<br>
+																																		<br>
+												cat &gt; ./opt/rutile_kpts${NK}.in &lt;&lt; EOF											<br>
+												&nbsp; &CONTROL																			<br>
+												&nbsp;&nbsp; calculation = 'scf',														<br>
+												&nbsp;&nbsp; prefix = 'rutile',															<br>
+												&nbsp;&nbsp; outdir = './tmp/'															<br>
+												&nbsp;&nbsp; pseudo_dir = './pseudos/'													<br>
+												&nbsp; /																				<br>
+												&nbsp; &SYSTEM																			<br>
+												&nbsp;&nbsp; ibrav = 6																	<br>
+												&nbsp;&nbsp; celldm(1) = 8.67      ! a in bohr, 4.59 angstroms							<br>
+												&nbsp;&nbsp; celldm(3) = 0.645     ! c/a												<br>
+												&nbsp;&nbsp; nat = 6, 																	<br>
+												&nbsp;&nbsp; ntyp = 2,																	<br>
+												&nbsp;&nbsp; ecutwfc = 50																<br>
+												&nbsp;&nbsp; ecutrho = 200																<br>
+												&nbsp; /																				<br>
+												&nbsp; &ELECTRONS																		<br>
+												&nbsp;&nbsp; mixing_beta = 0.6															<br>
+												&nbsp; /																				<br>
+																																		<br>
+												&nbsp; ATOMIC_SPECIES																	<br>
+												&nbsp;&nbsp; Ti &nbsp; 47.867 &nbsp;&nbsp; Ti_pbe_v1.4.uspp.F.upf						<br>
+												&nbsp;&nbsp; O  &nbsp;&nbsp; 15.999 &nbsp;&nbsp; O.pbe-n-kjpaw_psl.0.1.upf				<br>
+																																		<br>
+												&nbsp; ATOMIC_POSITIONS (crystal)														<br>
+												&nbsp;&nbsp; Ti &nbsp; 0.00000 &nbsp;&nbsp; 0.00000 &nbsp;&nbsp; 0.00000				<br>
+												&nbsp;&nbsp; Ti &nbsp; 0.50000 &nbsp;&nbsp; 0.50000 &nbsp;&nbsp; 0.50000				<br>
+												&nbsp;&nbsp; O  &nbsp;&nbsp; 0.30479 &nbsp;&nbsp; 0.30479 &nbsp;&nbsp; 0.00000			<br>
+												&nbsp;&nbsp; O  &nbsp;&nbsp; 0.19521 &nbsp;&nbsp; 0.80479 &nbsp;&nbsp; 0.50000			<br>
+												&nbsp;&nbsp; O  &nbsp; -0.30479 &nbsp; -0.30479 &nbsp;&nbsp; 0.00000					<br>
+												&nbsp;&nbsp; O  &nbsp;&nbsp; 0.80479 &nbsp;&nbsp; 0.19521 &nbsp;&nbsp; 0.50000			<br>
+																																		<br>
+												&nbsp; K_POINTS (automatic)																<br>
+												&nbsp;&nbsp; $NK $NK $NK_C 0 0 0														<br>
+												EOF																						<br>
+																																		<br>
+												pw.x < ./opt/rutile_opt3_kpts${NK}.in > ./opt/rutile_opt3_kpts${NK}.out					<br>
+																																		<br>
+												done																				 	<br>
+											</div>
+											<div class="terminalblock" style="font-size:11pt; line-height:1.2em;">
+												(env) <b style="color:#10bbad">qe</b>:<b style="color:aquamarine;">~/folder/path</b>$ ./rutile_kpts_shell_script.sh 			<br>
+												(env) <b style="color:#10bbad">qe</b>:<b style="color:aquamarine;">~/folder/path</b>$ grep ! ./opt/rutile_kpts*.out 			<br>
+												<b style="color:#10bb49">./opt/rutile_kpts1.out</b>:<b style="color:#9e10bb">!</b> &nbsp;&nbsp; total energy &nbsp; = &nbsp; -405.84521474 Ry 	<br>
+												<b style="color:#10bb49">./opt/rutile_kpts2.out</b>:<b style="color:#9e10bb">!</b> &nbsp;&nbsp; total energy &nbsp; = &nbsp; -405.91827793 Ry 	<br>
+												<b style="color:#10bb49">./opt/rutile_kpts3.out</b>:<b style="color:#9e10bb">!</b> &nbsp;&nbsp; total energy &nbsp; = &nbsp; -405.92442352 Ry 	<br>
+												<b style="color:#10bb49">./opt/rutile_kpts4.out</b>:<b style="color:#9e10bb">!</b> &nbsp;&nbsp; total energy &nbsp; = &nbsp; -405.92467186 Ry 	<br>
+												<b style="color:#10bb49">./opt/rutile_kpts5.out</b>:<b style="color:#9e10bb">!</b> &nbsp;&nbsp; total energy &nbsp; = &nbsp; -405.92473587 Ry 	<br>
+												<b style="color:#10bb49">./opt/rutile_kpts6.out</b>:<b style="color:#9e10bb">!</b> &nbsp;&nbsp; total energy &nbsp; = &nbsp; -405.92474148 Ry 	<br>
+												<b style="color:#10bb49">./opt/rutile_kpts7.out</b>:<b style="color:#9e10bb">!</b> &nbsp;&nbsp; total energy &nbsp; = &nbsp; -405.92474316 Ry 	<br>
+											</div>
+										<p style="margin-bottom: 1%;">
+											For rutile, 'ecutwfc' converged at 50 Ry. 
+											'ecutrho' converged at 200 Ry. 
+											This was slightly unexpected as the Ti PP used is an ultrasoft potential, which often require higher ecutrho values than the typical 4 x ecutwfc.
+											K point grid converged at 4 4 6 0 0 0 (corresponding to ./opt/rutile_kpts4.out in the example above).
+										</p>
+									</div>
+
+									<div style="margin-bottom:5%;">
+										<h4 style="color:#085E57;"> Step 3 | Variable Cell Relaxation </h4>
+										<p style="margin-bottom: 1%;">
+											Finally, a vc-relax calculation was run using the optimised values from step 2 to optimise the cell dimensions and atomic positions.
+											This calculation required several additional parameters and the includion of '&IONS' and '&CELL' sections.
+											In the main, the additional parameters provide convergence thresholds for the calculation. 
+											Many of these were added explicitly when earlier attempts failed to converge for rutile, but may not be necessary for other calculations.
+											These are set to the pw.x documentation's suggested values, and while they are made explicit here, may have been included implicitly in earlier calculations.
+										</p><p style="margin-bottom: 1%;">
+											<b>The '&IONS' section</b> here explicitly sets the algorithm used during relaxation ('ion_dynamics') and drops the intial ionic displacement used ('trust_radius_ini'). 
+											This latter change was made when earlier attempts failed to converge.
+										</p><p>
+											<b>The '&CELL' section</b> here explicitly sets the algorithm used during relaxation ('cell_dynamics'), pressure for the calculation ('press') and pressure convergence threshold ('press_conv_thr').
+											The degrees of freedom parameter ('cell_dofree = 'ibrav'') requires the calculation to retain the tetragonal lattice. 
+											'cell_factor = 2.0' is a required parameter for construction of pseudopotential tables while optimising cell dimensions.
+										</p>
+
+											<div style="font-family:'Courier New',Courier,monospace; font-weight:bold">
+												Variable Cell Relaxation Calculation Input File | Rutile
+											</div>
+											<div class="codeblock" style="font-size:11pt; line-height:1.2em;">
+												&CONTROL																		<br>
+												&nbsp; calculation = 'vc-relax',												<br>
+												&nbsp; prefix = 'rutile',														<br>
+												&nbsp; outdir = './tmp/'														<br>
+												&nbsp; pseudo_dir = './pseudos/'												<br>
+												&nbsp; forc_conv_thr = 1.0D-3													<br>
+												&nbsp; etot_conv_thr = 1.0D-5      												<br>
+												&nbsp; verbosity = 'high'														<br>
+												&nbsp; tstress = .true.															<br>
+												&nbsp; tprnfor = .true.															<br>
+												/																				<br>
+												&SYSTEM																			<br>
+												&nbsp; ibrav = 6																<br>
+												&nbsp; celldm(1) = 8.670														<br>
+												&nbsp; celldm(3) = 0.645 														<br>
+												&nbsp; nat = 6, 																<br>
+												&nbsp; ntyp = 2,																<br>
+												&nbsp; ecutwfc = 50																<br>
+												&nbsp; ecutrho = 200															<br>
+												/																				<br>
+												&ELECTRONS																		<br>
+												&nbsp; conv_thr = 1.0D-8														<br>
+												&nbsp; mixing_beta = 0.6														<br>
+												/																				<br>
+												&IONS																			<br>
+												&nbsp; ion_dynamics = 'bfgs'													<br>
+												&nbsp; trust_radius_ini = 0.1     												<br>
+												/																				<br>
+												&CELL																			<br>
+												&nbsp; cell_dynamics = 'bfgs'													<br>
+												&nbsp; press = 0D0																<br>
+												&nbsp; press_conv_thr = 0.5D0													<br>
+												&nbsp; cell_dofree = 'ibrav'													<br>
+												&nbsp; cell_factor = 2.0														<br>
+												/																				<br>
+																																<br>
+												ATOMIC_SPECIES																	<br>
+												&nbsp; Ti &nbsp; 47.867 &nbsp;&nbsp; Ti_pbe_v1.4.uspp.F.upf						<br>
+												&nbsp; O  &nbsp;&nbsp; 15.999 &nbsp;&nbsp; O.pbe-n-kjpaw_psl.0.1.upf			<br>
+																																<br>
+												ATOMIC_POSITIONS (crystal)														<br>
+												&nbsp; Ti &nbsp; 0.00000 &nbsp;&nbsp; 0.00000 &nbsp;&nbsp; 0.00000				<br>
+												&nbsp; Ti &nbsp; 0.50000 &nbsp;&nbsp; 0.50000 &nbsp;&nbsp; 0.50000				<br>
+												&nbsp; O  &nbsp;&nbsp; 0.30479 &nbsp;&nbsp; 0.30479 &nbsp;&nbsp; 0.00000		<br>
+												&nbsp; O  &nbsp;&nbsp; 0.19521 &nbsp;&nbsp; 0.80479 &nbsp;&nbsp; 0.50000		<br>
+												&nbsp; O  &nbsp; -0.30479 &nbsp; -0.30479 &nbsp;&nbsp; 0.00000					<br>
+												&nbsp; O  &nbsp;&nbsp; 0.80479 &nbsp;&nbsp; 0.19521 &nbsp;&nbsp; 0.50000		<br>
+																																<br>
+												K_POINTS (automatic)															<br>
+												&nbsp; 4 4 6 0 0 0																<br>
+											</div>
+											<div class="terminalblock" style="font-size:11pt; line-height:1.2em;">
+												(env) <b style="color:#10bbad">qe</b>:<b style="color:aquamarine;">~/folder/path</b>$ pw.x &lt;rutile.vcrelax.in&gt; rutile.vcrelax.out
+											</div>
+									</div>
+
+									<div style="margin-bottom:5%;">
+										<h4 style="color:#085E57;"> Results | Rutile </h4>
+										<p style="margin-bottom: 3%;">
+											To assess the efficacy of my relaxation of rutile, the cell parameters were compared against experimental data and materials project simulations. 
+											In general, the unit cell dimensions from my calculation are slightly closer to the experimental data than those proposed by the materials project.
+											The materials project calculated values for atomic positions are in slightly better agreement with the crystallographic data than mine are, however the difference is slight.
+											My values are within about 1% of both sets of values for all measurements.											
+										</p>
+
+										<img style="display: block; margin-left: auto; margin-right: auto; width: 40%; margin-bottom: 5%;" src="images/rutile_vcrelax2_white.png" alt="" />
+
+										<table>
+											<tr>
+												<th>Parameter</th>
+												<th>Calculation Result</th>
+												<th>Crystallographic Data</th>
+												<th>Materials Project Data</th>
+											</tr>
+											<tr>
+												<td>V (Å<sup>3</sup>)</td>
+												<td>63.886</td>
+												<td>62.486</td>
+												<td>64.292</td>
+											</tr>
+											<tr>
+												<td>a (Å)</td>
+												<td>4.643</td>
+												<td>4.595</td>
+												<td>4.653</td>
+											</tr>
+											<tr>
+												<td>b (Å)</td>
+												<td>4.643</td>
+												<td>4.595</td>
+												<td>4.653</td>
+											</tr>
+											<tr>
+												<td>c (Å)</td>
+												<td>2.964</td>
+												<td>2.960</td>
+												<td>2.969</td>
+											</tr>
+											<tr>
+												<td>Ti1</td>
+												<td>0.0000, 0.0000, 0.0000</td>
+												<td>0.0000, 0.0000, 0.0000</td>
+												<td>0.0000, 0.0000, 0.0000</td>
+											</tr>
+											<tr>
+												<td>Ti2</td>
+												<td>0.5000, 0.5000, 0.5000</td>
+												<td>0.5000, 0.5000, 0.5000</td>
+												<td>0.5000, 0.5000, 0.5000</td>
+											</tr>
+											<tr>
+												<td>O1</td>
+												<td>0.3051, 0.3051, 0.0000</td>
+												<td>0.3048, 0.3048, 0.0000</td>
+												<td>0.3046, 0.3046, 0.0000</td>
+											</tr>
+											<tr>
+												<td>O2</td>
+												<td>0.1949, 0.8051, 0.50000</td>
+												<td>0.1952, 0.8048, 0.5000</td>
+												<td>0.1954, 0.8046, 0.5000</td>
+											</tr>
+											<tr>
+												<td>O3</td>
+												<td>-0.3051, -0.3051, 0.0000</td>
+												<td>-0.3048, -0.3048, 0.0000</td>
+												<td>-0.3046, -0.3046, 0.0000</td>
+											</tr>
+											<tr>
+												<td>O4</td>
+												<td>0.8051, 0.1949, 0.5000</td>
+												<td>0.8048, 0.1952, 0.5000</td>
+												<td>0.8046, 0.1954, 0.5000</td>
+											</tr>
+										</table>
+										<p>
+											Precision used for each parameter is set equivalent to the least precise measurement. 
+											Atomic positions are given in fractional coordinates.
+										</p>
+									</div>
+
+									<!--div style="margin-bottom:5%;">
+										<h4 style="color:#085E57;"> References </h4>
+										<ul> 
+											<li>Text Text Text Text Text Text Text Text Text Text Text Text
+											<li>XSS
+										</ul>
+									</div-->
+
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<ul class="copyright">
+								<li>&copy; Daniel J. Kowalski. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

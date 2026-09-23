@@ -3387,6 +3387,20 @@ input, select, textarea {
 		margin-bottom: 2.25em;
 	}
 
+	.terminalblock {
+		margin: 0 auto;
+		max-width: calc(100% - 4.5em);
+		width: 95%;
+		padding: 1.5%;
+		background-color: #363636;
+        border: 1px solid #363636;
+        border-radius: 5px;
+        overflow-x: auto; /* Adds horizontal scroll if code is too long */
+		font-family: 'Courier New', Courier, monospace;
+        color: #ffffff;
+		margin-bottom: 2.25em;
+	}
+
 
 /* Centered Element */
 

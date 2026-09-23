@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>DK | Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="icon" type="image/x-icon" href="images/erlenmeyer-16x16.png">
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<span class="image avatar"><img src="images/1723819068352.jpg" alt="" /></span>
+					<h1 id="logo"><a href="#">Daniel J. Kowalski</a></h1>
+					<p>
+						PhD in Digital Chemistry 
+						<br>
+						Chemistry | Data Science | Education 
+					</p>
+				</header>
+				
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html"><i class="icon solid fa-home"></i> &nbsp; Homepage</a></li>
+						<li><a href="research.html"><i class="icon solid fa-vial"></i> &nbsp; Research Interests</a></li>
+						<li><a href="#data-portfolio" class="active"><i class="icon solid fa-laptop-code"></i> &nbsp; Data Portfolio</a></li>
+						<li><a href="#data-portfolio"><i class="icon solid fa-angle-up"></i> &nbsp; Top</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+						<!--<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>-->
+						<li><a href="https://www.linkedin.com/in/danieljkowalski" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://scholar.google.com/citations?user=6dFv_4gAAAAJ&hl=en&oi=ao" class="icon brands fa-google"><span class="label">Google Scholar</span></a></li>
+						<li><a href="https://github.com/djkowalski" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					</ul>
+				</footer>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Data Portfolio -->
+							<section id="data-portfolio">
+								<div class="image main" data-position="center">
+									<img src="images/banner_data_blue_trimmed.png" alt="Molecular rendering (Unsplash @dkoi)" />
+								</div>
+								<div class="container">
+									<header class="major">
+										<h2>Data Portfolio</h2>
+									</header>
+								</div>
+							
+								<section>
+									<div class="container">
+										<p>
+											This portfolio is intended to demonstrate skills across a variety of data science and machine learning techniques using Python. 
+											Each project is based around a toy problem that uses major techniques from modern data science and machine learning.
+											Often, these have also been chosen to be relevant to chemical research.
+											As I only have access to a limited amount of computing power, the projects are intended to demonstrate proficiency with a given tool, rather than publication quality results.
+										</p>
+										<div class="center">
+											<a href="#statistical-inference" class="button alt">Statistical Inference &nbsp; <i class="icon solid fa-chart-bar"></i></a> &nbsp; &nbsp;
+											<a href="#deep-learning" class="button alt">Deep Learning &nbsp; <i class="icon solid fa-robot"></i></a> &nbsp; &nbsp;
+											<a href="#chemical-simulations" class="button alt">Chemical Simulations &nbsp; <i class="icon solid fa-atom"></i></a>
+											<!--a href="#other-projects" class="button alt">Other &nbsp; <i class="icon solid fa-folder"></i></a-->
+										</div>
+										<p></p>
+									</div>
+								</section>
+							</section>
+
+						<!-- Statistical Inference -->
+							<section id="statistical-inference">
+								<div class="container">
+									<h3 style="color:#085E57;">1 | Statistical Inference</h3>
+									<p style="font-weight:bold;">
+										Good decisions depend on knowing how much to trust your data. 
+										This section covers projects that use statistical methods to test ideas, compare outcomes and draw robust conclusions from the available evidence.
+									</p>
+									<div class="features">
+										<article>
+											<a href="" class="image"><img src="images/avatar.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>1a | Design of Experiments and Analysis of Variance</h4>
+												<p>
+													Details coming soon!
+												</p>
+												<ul class="actions">
+													<li><a href="" class="button">GitHub &nbsp; <i class="icon brands fa-github"></i></a></li>
+												</ul>
+											</div>
+										</article>
+										<!--article>
+											<a href="" class="image"><img src="images/avatar.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>1b | A/B Testing</h4>
+												<p>
+													Details coming soon!
+												</p>
+												<ul class="actions">
+													<li><a href="" class="button">GitHub &nbsp; <i class="icon brands fa-github"></i></a></li>
+												</ul>
+											</div>
+										</article-->
+									</div>
+								</div>
+							</section>
+
+						<!-- Deep Learning -->
+							<section id="deep-learning">
+								<div class="container">
+									<h3 style="color:#085E57;">2 | Deep Learning</h3>
+									<p style="font-weight:bold;">
+										Neural networks are powerful tools for learning patterns from complex data, but they require careful thought during construction, training, and evaluation. 
+										The projects here explore a range of modern architectures and approaches, from building models from scratch to adapting existing ones for new tasks.
+									</p>
+									<div class="features">
+										<article>
+											<a href="https://github.com/djkowalski/portfolio_logP/blob/main/logP_RNN_v3_BO.ipynb" class="image"><img src="images/portfolio_1_cover_solubility.png" alt="Imaage showing the difference between true and predicted values for the test dataset" /></a>
+											<div class="inner">
+												<h4>2a | Predictive Neural Networks for Chemistry</h4>
+												<p style="margin-bottom: 2%;">
+													<u>Aim</u>: 
+													This project uses a dataset of calculated log(P) values for a variety of organic molecules to predict solubility from molecular structure using a <b>long short-term memory recurrent neural network (LSTM RNN)</b>.
+												</p><p style="margin-bottom: 2%;">
+													<u>Workflow</u>: 
+													SMILES strings are tokenised, trimmed, and padded, before being used to train the model.
+													<b>Bayesian optimisation</b> is used to optimise the hyperparameters in order to achieve the best balance between the mean square error of the training and test datasets.
+												</p><p>
+													<u>Outcome</u>: 
+													The model achieves reasonable accuracy, but tends toward larger errors when less common structural features are present (e.g. for hypervalent iodine compounds or some atypical phosphorous-containing species, such as deprotonated alkylphosphanes).
+												</p>
+												<ul class="actions">
+													<!--li><a href="portfolio_1_solubility.html" class="button alt">Read More</a></li-->
+													<li><a href="portfolio_2a_logP.html" class="button alt"><i class="icon solid fa-plus"></i> &nbsp; More</a></li> 
+													<li><a href="https://github.com/djkowalski/portfolio_logP/blob/main/logP_RNN_v3_BO.ipynb" class="button">GitHub &nbsp; <i class="icon brands fa-github"></i></a></li> 
+													<!--li><a href="https://github.com/djkowalski/portfolio_logP/blob/main/images/output_well%20performing%20molecules.png" class="button alt"><i class="icon solid fa-eye"></i> &nbsp; High performers</a></li>
+													<li><a href="https://github.com/djkowalski/portfolio_logP/blob/main/images/output_poorly%20performing%20molecules.png" class="button alt"><i class="icon solid fa-eye"></i> &nbsp; Low performers</a></li-->
+												</ul>
+											</div>
+										</article>
+										<article>
+											<a href="https://github.com/djkowalski/portfolio_birbAI/blob/main/birbAI_2%20GAN_v1.ipynb" class="image"><img src="images/portfolio_2_cover_birbAI.png" alt="Four AI-generated images of birds" /></a>
+											<div class="inner">
+												<h4>2b | Generative AI for Image Creation</h4>
+												<p style="margin-bottom: 2%;">
+													<u>Aim</u>: 
+													This project uses a <b>Generative Adversarial Network (GAN)</b> to generate images of birds.
+												</p><p style="margin-bottom: 2%;">
+													<u>Workflow</u>: 
+													A dataset of over 9,000 bird images is first created by standardising the size and resolution and converting to greyscale.
+													This is then used to train two networks - an image generator and a real/fake image discriminator - in tandem. 
+													The generator takes noise as an input and attempts to trick the discriminator as the latter tries to determine whether images are from the original dataset (real) or generated (fake).
+												</p><p>
+													<u>Outcome</u>: 
+													While the generator is unable to create images that are truly lifelike, it is able to produce images that are clearly <i>attempting</i> to mimic birds with around 300-400 training epochs. 
+													This could potentially be further optimised with additional computing power, but is a solid proof of concept for my purposes.
+												</p>
+												<ul class="actions">
+													<li><a href="" class="button alt"><i class="icon solid fa-plus"></i> &nbsp; More</a></li>
+													<li><a href="https://github.com/djkowalski/portfolio_birbAI/blob/main/birbAI_2%20GAN_v1.ipynb" class="button">GitHub &nbsp; <i class="icon brands fa-github"></i></a></li>
+													<!--li><a href="https://github.com/djkowalski/portfolio_birbAI/blob/main/gan-generated-images-false-color.png" class="button alt"><i class="icon solid fa-eye"></i> &nbsp; Selected generated images</a></li-->
+												</ul>
+											</div>
+										</article>
+										<article>
+											<a href="#data_portfolio" class="image"><img src="images/portfolio_3_cover_elmosays.png" alt="" /></a>
+											<div class="inner">
+												<h4>2c | Fine-Tuning a Large Language Model</h4>
+												<p style="margin-bottom: 2%;">
+													<u>Aim</u>: 
+													This project fine-tuned a local version of the <b>TinyLlama LLM</b> on a database of speech from Elmo, the Sesame Street character. 
+												</p><p style="margin-bottom: 2%;">
+													<u>Workflow</u>: 
+													LLMs are commonly criticised for their stylised and slightly unnatural voice, fine-tuning can be used to alter this. 
+													<b>Parameter-efficient fine tuning</b> was used (where a small number of model parameters are tuned, rather than all parameters), to reduce the computational cost.
+												</p><p>
+													<u>Outcome</u>: 
+													The tuned model (TinyElmo) was able to give responses mimicking Elmo’s idiosyncratic speech when prompted directly to speak in his voice, while an untuned model gave responses that were indecipherable from its usual voice with the same direct prompt. 
+												</p>
+												<!--ul class="actions">
+													<li><a href="" class="button alt"><i class="icon solid fa-plus"></i> &nbsp; More</a></li>	
+													<li><a href="#" class="button">GitHub <i class="icon brands fa-github"></i></a></li>
+												</ul-->
+											</div>
+										</article>
+									</div>
+								</div>
+							</section>
+
+						<!-- Chemical Simulations -->
+							<section id="chemical-simulations">
+								<div class="container">
+									<h3 style="color:#085E57;">3 | Chemical Simulations</h3>
+									<p style="font-weight:bold;">
+										Computational chemistry offers a way to explore materials and molecules at a level of detail experiments can't always reach. 
+										The work here applies simulation to predict structure and properties using <a href="https://www.quantum-espresso.org">Quantum Espresso</a>.
+									</p>
+									<div class="features">
+										<article>
+											<a href="3a-geometry-optimisation.html" class="image"><img src="images/rutile_square.png" alt="" /></a>
+											<div class="inner">
+												<h4>3a | Geometry Optimisation for Periodic Crystals</h4>
+												<p>
+													This project aims to optimise the structures of a variety of periodic inorganic crystals in Quantum ESPRESSO, covering a variety of major structure types. 
+													The process is shown in detail for rutile (tetragonal TiO<sub>2</sub>), with further examples following the same workflow included.
+													The structure and choice of parameters for the self-consistent field calculation input file is discussed. 
+													Where necessary, these parameters are then optimised and a variable cell relaxation calculation performed to provide the optimised cell coordinates. 
+												</p>
+												<ul class="actions">
+													<li><a href="3a-geometry-optimisation.html" class="button alt"><i class="icon solid fa-plus"></i> &nbsp; More</a></li>
+													<li><a href="" class="button">GitHub &nbsp; <i class="icon brands fa-github"></i></a></li>
+												</ul>
+											</div>
+										</article>
+										<article>
+											<a href="" class="image"><img src="images/avatar.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>3b | Density of States</h4>
+												<p>
+													Details coming soon!
+												</p>
+												<ul class="actions">
+													<li><a href="" class="button alt">More &nbsp; <i class="icon solid fa-plus"></i></a></li>
+													<li><a href="" class="button">GitHub &nbsp; <i class="icon brands fa-github"></i></a></li>
+												</ul>
+											</div>
+										</article>
+									</div>
+								</div>
+							</section>
+
+						<!-- Other Projects -->
+							<!--section id="other-projects">
+								<div class="container">
+									<h3 style="color:#085E57;">4 | Other Projects</h3>
+									<p>
+										Work that doesn't fit neatly above but shares the same interests: 
+											understanding how complex behaviour emerges from simple rules, and turning physical intuition into working code.
+									</p>
+									<div class="features">
+										<article>
+											<a href="" class="image"><img src="images/avatar.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>4a | Simulation of Emergent Systems</h4>
+												<p>
+													Details coming soon!
+												</p>
+												<ul class="actions">
+													<li><a href="" class="button">GitHub &nbsp; <i class="icon brands fa-github"></i></a></li>
+												</ul>
+											</div>
+										</article>
+										<article>
+											<a href="" class="image"><img src="images/avatar.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>4b | Game-Playing Reinforcement Learning Agent</h4>
+												<p>
+													Details coming soon!
+												</p>
+												<ul class="actions">
+													<li><a href="" class="button">GitHub &nbsp; <i class="icon brands fa-github"></i></a></li>
+												</ul>
+											</div>
+										</article>
+									</div>
+								</div>
+							</section-->
+
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<ul class="copyright">
+								<li>&copy; Daniel J. Kowalski. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
